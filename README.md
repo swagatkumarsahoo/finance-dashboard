@@ -196,7 +196,7 @@ This layered approach keeps tests:
 
 ## Live Demo
 
-https://finance-dashboard-iota-tan.vercel.app/insights
+https://finance-dashboard-iota-tan.vercel.app/
 
 ---
 
