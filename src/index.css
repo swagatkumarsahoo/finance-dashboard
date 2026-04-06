@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts are loaded in index.html ── */
+
+/* ── Base resets ── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans bg-dark-300 text-white transition-colors duration-300;
+    min-height: 100vh;
+  }
+
+  /* Light mode body */
+  body.light {
+    @apply bg-dark-50 text-gray-900;
+  }
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2E3F;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00D4AA;
+}
+
+/* ── Utility classes ── */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-200;
+  }
+
+  .card {
+    @apply bg-dark-card border border-dark-border rounded-2xl;
+  }
+
+  .card-light {
+    @apply bg-white border border-gray-200 rounded-2xl;
+  }
+
+  .number {
+    @apply font-mono;
+  }
+
+  /* Animate stagger helper — set --delay via inline style */
+  .stagger {
+    animation: slideUp 0.4s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+}
